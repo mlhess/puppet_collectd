@@ -9,7 +9,6 @@ class collectd::plugins::apache (
 ) {
   validate_hash($modules)
   Exec { path => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ] }
-  include collectd
 
   collectd::plugins::plugin_common { 'apache':
     modules             => $modules,
